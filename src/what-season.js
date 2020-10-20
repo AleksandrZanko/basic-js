@@ -6,12 +6,13 @@ module.exports = function getSeason(date) {
 		return 'Unable to determine the time of year!';
 	} 
 	
-	let year = date.getFullYear();
+
+	//let year = date.getFullYear();
 	let month = date.getMonth();
-	let day = date.getDate();
+	//let day = date.getDate();
 	
-	if (date.getFullYear() == year && date.getMonth() == month && date.getDate() == day ) {
-	
+	if (Object.prototype.toString.call(date) === '[object Date]') {
+	 	
 		if(month <= 1 || month == 11) {
 			return 'winter';
 		} else if(month >= 2 && month <= 4) {
